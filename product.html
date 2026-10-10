@@ -1006,7 +1006,7 @@
             rel="noopener"
             style="background-color: white; color: #000; font-weight: bold"
           >
-            <span>ORDER NOW</span> ↗</a
+            ORDER NOW ↗</a
           >
         </div>
       </nav>
@@ -1157,24 +1157,20 @@
                   >
                 </li>
                 <li>
-                  <a href="#"
-                    ><svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path d="M4 4l16 16M20 4L4 20" /></svg
-                    >Twitter</a
-                  >
-                </li>
+                <a href="/PrivacyPolicy.html">Privacy</a>
+              </li>
+              <li>
+                <a href="/TermsAndConditions.html">Terms and Conditions</a>
+              </li>
               </ul>
             </div>
           </div>
           <div class="cr">
             <span>© 2026 Auranuts. All rights reserved.</span
-            ><span><a href="#">Privacy</a><a href="#">Terms</a></span>
-          </div>
+            >
+            <span
+              >Designed by <a href="https://wa.me/918867740856?text=Hi%20there!%20I%20would%20like%20to%20build%20a%20website%20for%20my%20business.">SunainStudios</a></span
+            </div>
         </div>
       </footer>
     </div>
@@ -1455,8 +1451,8 @@
           .map((p, productIndex) => {
             const askForPrice = p[4] === 0 || p[4] === "Ask for price";
             const msg = askForPrice
-              ? `Hey there, I want to order ${p[2]} (${p[1]}). May I know the price?`
-              : `Hey there, I want to order ${p[2]} (${p[1]}).`;
+              ? `Hey there, I want to order *${p[2]} (${p[1]})*. May I know the price?`
+              : `Hey there, I want to order *${p[2]} (${p[1]})*.`;
             const image =
               PRODUCT_IMAGES[i][productIndex % PRODUCT_IMAGES[i].length];
             const startingPrice = startingPrices[p[2]];
