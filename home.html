@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
-    <title>AuraNuts — Dry Fruits </title>
+    <title>AuraNuts — Dry Fruits</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@300;400;500;600&display=swap"
       rel="stylesheet"
@@ -379,6 +378,12 @@
         gap: 22px;
       }
 
+      .tr-more {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+      }
+
       .pc {
         position: relative;
         border-radius: 26px;
@@ -499,11 +504,21 @@
         gap: 10px;
         align-items: center;
         transition: 0.35s;
+        animation: green-button-glow 2.4s ease-in-out infinite;
       }
 
       .wa:hover {
         transform: translateY(-3px);
         box-shadow: 0 10px 30px #25d36666;
+      }
+
+      @keyframes green-button-glow {
+        0%, 100% { box-shadow: 0 0 0 rgba(37, 211, 102, 0); }
+        50% { box-shadow: 0 0 18px rgba(37, 211, 102, 0.62); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .wa { animation: none; }
       }
 
       .gg {
@@ -1123,42 +1138,16 @@
       />
       <div class="wrap">
         <div class="hc rv" style="margin-top: 100px">
-          <h1>Handcrafted with care, shared with warmth.</h1>
+          <h2>Goodness in every handful</h2>
+          <h1>A Little Nutty. <br />A Lot of Goodness.</h1>
           <p>
-            Goodness of dry fruits. The sweetness of honey. Made for everyday
-            life — thoughtfully packed, convenient and accessible.
+            Discover delicious dry fruits, honey-infused combinations, and
+            thoughtfully crafted treats for your everyday cravings and special
+            occasions.
+            <br />From everyday favourites to beautifully customized gifts, find
+            something special for every moment with AuraNuts.
           </p>
           <a class="pill w" href="product.html">Explore Collections</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="about" id="about">
-      <div class="wrap ag">
-        <div class="bw rv">
-          <img src="assets/AboutImage.svg" alt="Bowl of mixed dry fruits" />
-        </div>
-        <div class="ar rv">
-          <div class="lbl">About the company</div>
-          <h2>What if healthy snacking could be simple enough for everyone?</h2>
-          <p>
-            AuraNuts began in Bangalore in May 2026 with a straightforward idea:
-            nutritious dry-fruit snacks should be convenient and affordable
-            enough to become part of everyday life.
-          </p>
-          <div class="two">
-            <div>
-              Dry fruits are often treated as premium or occasional foods. We
-              want to change that perception — with small, convenient packs,
-              flexible quantities and combinations designed around real
-              routines.
-            </div>
-            <div>
-              Founded by Syed Waseem Ul Haque, an MNC corporate employee and
-              Bangalore resident, AuraNuts was born from noticing a simple
-              everyday opportunity and deciding to act on it.
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -1172,6 +1161,41 @@
         <span class="lbl rv">Our Collection</span>
         <h2 class="rv">Most Trending Packs</h2>
         <div class="cg" id="packs"></div>
+        <div class="tr-more rv">
+          <a class="pill w" href="product.html">More Items</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="wrap ag">
+        <div class="bw rv">
+          <img src="assets/AboutImage.svg" alt="Bowl of mixed dry fruits" />
+        </div>
+        <div class="ar rv">
+          <div class="lbl">About the company</div>
+          <h2>What if healthy snacking could be simple enough for everyone?</h2>
+          <p>
+            AuraNuts began in Bengaluru in May 2026 with a simple belief:
+            enjoying dry fruits shouldn't be limited to special occasions.
+          </p>
+          <div class="two">
+            <div>
+              Founded by Syed Waseem Ul Haque, AuraNuts was created to make
+              dry-fruit snacking more convenient, approachable, and affordable
+              for everyday customers.
+              <br />From classic dry fruits and honey-infused combinations to
+              customized creations and thoughtful gifting, we're building a
+              brand around choice, convenience, and the joy of sharing.
+            </div>
+            <div>
+              Whether it's a snack for yourself or a gift for someone special,
+              we want AuraNuts to be part of your everyday moments and
+              celebrations.
+              <br />AuraNuts — Pure Energy. Healthy Nutrition.
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1181,11 +1205,14 @@
           <div class="gh">
             <div>
               <div class="lbl">Gift Packages</div>
-              <h2>Customized gifts for every occasion.</h2>
+              <h2>Make Every Occasion a Little More Special.</h2>
               <p>
-                Order curated event packs, wedding favors, and corporate gifts
-                directly through WhatsApp. We’ll help you choose the right mix,
-                pack size, and delivery timing.
+                Some gifts are more than presents. They're a thoughtful way to
+                celebrate, appreciate, and share happiness. AuraNuts offers
+                dry-fruit gifting options for personal celebrations, weddings,
+                festivals, and corporate occasions. Choose from available
+                selections or discuss a customized gifting solution that suits
+                your needs.
               </p>
             </div>
             <a
@@ -1211,11 +1238,11 @@
           </div>
           <div class="gg">
             <div class="gc">
-              <span class="tag">Wedding Favors</span>
-              <h3>Thoughtful favors for your guests.</h3>
+              <span class="tag">Wedding</span>
+              <h3>Wedding Return Gifts</h3>
               <p>
-                Small-batch roasted nuts, honey pairings, and custom packaging
-                that fits your celebration.
+                Make your special day memorable with dry-fruit gifts for your
+                guests and loved ones.
               </p>
               <div class="im">
                 <img
@@ -1228,11 +1255,11 @@
               </div>
             </div>
             <div class="gc">
-              <span class="tag">Corporate Gifts</span>
-              <h3>Gifting that feels personal at scale.</h3>
+              <span class="tag">Festival Gifting</span>
+              <h3>Make Celebrations more Special.</h3>
               <p>
-                Custom branding, flexible pack sizes, and easy bulk ordering for
-                teams and clients.
+                Celebrate festivals with thoughtfully selected dry-fruit gifts
+                for family, friends, and colleagues.
               </p>
               <div class="im">
                 <img
@@ -1246,10 +1273,10 @@
             </div>
             <div class="gc">
               <span class="tag">Event Packs</span>
-              <h3>Easy ordering for every event.</h3>
+              <h3>Planning a Bulk or Customized Order?</h3>
               <p>
-                Share your guest count, date, and preferred mix, and we’ll send
-                a custom WhatsApp quote.
+                Tell us about your occasion, estimated quantity, and budget.
+                We'll help you explore suitable options.
               </p>
               <div class="im">
                 <img
@@ -1299,6 +1326,8 @@
               </div>
               <div>
                 <div class="lbl">Phone</div>
+                <a href="tel:+918660634853">☎ +91 8660634853</a>
+                <br />
                 <a href="tel:+919535806948">☎ +91 9535806948</a>
               </div>
             </div>
@@ -1330,20 +1359,17 @@
               src="data:image/webp;base64,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"
               alt="FSSAI"
             />
-<img
-              class="l"
-              src="assets/Logo.svg" 
-              alt="AuraNuts"
-            />
+            <img class="l" src="assets/Logo.svg" alt="AuraNuts" />
             <p>
-              Small-batch roasted nuts, thoughtful gifts, and a personal touch
-              that makes every moment feel more meaningful.
+              Goodness of dry fruits, the sweetness of honey, and thoughtful
+              gifting for everyday moments and special occasions.
             </p>
           </div>
           <div>
             <h4>Contact</h4>
             <ul>
               <li><a href="tel:+919535806948">+91 9535806948</a></li>
+              <li><a href="tel:+918660634853">+91 8660634853</a></li>
               <li>
                 <a href="mailto:auranutsofficial@gmail.com"
                   >auranutsofficial@gmail.com</a
@@ -1355,7 +1381,7 @@
           <div>
             <h4>Quick links</h4>
             <ul>
-              <li><a href="#collection">Shop</a></li>
+              <li><a href="/product.html">Shop</a></li>
               <li><a href="#about">About</a></li>
               <li><a href="#collection">Collection</a></li>
               <li><a href="#contact">Contact</a></li>
@@ -1365,7 +1391,8 @@
             <h4>Social</h4>
             <ul>
               <li>
-                <a href="#"
+                <a
+                  href="https://www.instagram.com/auranuts_official?utm_source=qr&stkn=MTgyNm5sejNsa28zNg=="
                   ><svg
                     viewBox="0 0 24 24"
                     fill="none"

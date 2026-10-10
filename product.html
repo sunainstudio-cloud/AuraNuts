@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
     <link rel="icon" type="image/x-icon" href="assets/Logo.svg" />
-    
+
     <style>
       :root {
         --bg: #000;
@@ -161,6 +161,7 @@
         gap: 10px;
         align-items: center;
         transition: 0.35s;
+        animation: green-button-glow 2.4s ease-in-out infinite;
       }
 
       .wa:hover {
@@ -168,6 +169,16 @@
         box-shadow: 0 10px 30px #25d36666;
       }
 
+      @keyframes green-button-glow {
+        0%, 100% { box-shadow: 0 0 0 rgba(37, 211, 102, 0); }
+        50% { box-shadow: 0 0 18px rgba(37, 211, 102, 0.62); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .wa { animation: none; }
+      }
+
+      /* FOOTER */
       /* FOOTER */
       footer {
         padding: 30px 0 22px;
@@ -237,6 +248,54 @@
 
       .cr span a {
         margin-left: 22px;
+      }
+
+      @media (max-width: 860px) {
+        .ag,
+        .cp {
+          grid-template-columns: 1fr;
+        }
+
+        .ag {
+          gap: 40px;
+        }
+
+        .cg,
+        .gg {
+          grid-template-columns: 1fr;
+        }
+
+        .hero .img {
+          width: 100%;
+          opacity: 0.55;
+          -webkit-mask-image: linear-gradient(transparent, #000 40%);
+          mask-image: linear-gradient(transparent, #000 40%);
+        }
+
+        .hero {
+          min-height: 560px;
+        }
+
+        .fg {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .nv ul {
+          gap: 18px;
+        }
+
+        .nv .ord span {
+          display: none;
+        }
+
+        .panel,
+        .cp {
+          padding: 22px;
+        }
+
+        .pc {
+          aspect-ratio: 4/4.2;
+        }
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -697,7 +756,9 @@
 
         .ph {
           padding: 132px 0 24px;
-          background: linear-gradient(#0008, #000 98%), var(--bgimg) center/cover;
+          background:
+            linear-gradient(#0008, #000 98%),
+            var(--bgimg) center/cover;
         }
 
         .ph .wrap,
@@ -883,6 +944,42 @@
         .pf .cr span a {
           margin: 0 16px 0 0;
         }
+
+        footer {
+          padding: 24px 0 18px;
+        }
+
+        .fg {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 22px 16px;
+          padding-bottom: 22px;
+        }
+
+        .fg > div:first-child {
+          grid-column: 1 / -1;
+        }
+
+        .fg p {
+          max-width: 300px;
+          line-height: 1.6;
+        }
+
+        .fg li {
+          overflow-wrap: anywhere;
+          font-size: 12px;
+        }
+
+        .cr {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 10px;
+          font-size: 11px;
+        }
+
+        .cr span a {
+          margin: 0 16px 0 0;
+        }
+      /* } */
       }
     </style>
   </head>
@@ -993,94 +1090,93 @@
           </div>
         </div>
       </section>
-       <footer class="pf">
-      <div class="wrap">
-        <div class="fg">
-          <div>
-            <img
-              class="f"
-              src="data:image/webp;base64,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"
-              alt="FSSAI"
-            /><br /><img
-              class="l"
-              src="assets/Logo.svg"
-              alt="AuraNuts"
-            />
-            <p>
-              Small-batch roasted nuts, thoughtful gifts, and a personal touch
-              that makes every moment feel more meaningful.
-            </p>
-          </div>
-          <div>
-            <h4>Contact</h4>
-            <ul>
-              <li><a href="tel:+919535806948">+91 9535806948</a></li>
-              <li>
-                <a href="mailto:auranutsofficial@gmail.com"
-                  >auranutsofficial@gmail.com</a
-                >
-              </li>
-              <li>Bangalore, Karnataka</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Quick links</h4>
-            <ul>
-              <li><a href="#collection">Shop</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#collection">Collection</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Social</h4>
-            <ul>
-              <li>
-                <a href="#"
-                  ><svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
+      <footer>
+        <div class="wrap">
+          <div class="fg">
+            <div>
+              <img
+                class="f"
+                src="data:image/webp;base64,UklGRlQOAABXRUJQVlA4IEgOAABQRACdASoEAYAAPk0gjkQioiGYmoU0KATEsjd+Pj2VjIFzve3n5+N866z/3P8WexnxIjhdhX7r+6/mR8xP8h/rvab93nuAfrP/xP8B1v/MB+vH67+7x/ff1k9039p/wvsAfz//T///1iPYd/bz2CP5t/kv//6637pfCV/bv+Z+3vtP/+v2AP//wDHkvsm/4WQQCO9l+gbsflMYAO6O+a8z/sZrWtAb+a/4b1jv9XyzPxUk7Ur27uA5+Xu3F63H67546yKFfX7JfaizMiaPxDvLmraJnjFljndCvr9lfRX5wko9iLkELh5TnJkRur3xo4OOynkTL8ADvMEjQC22c0agHYKusCP9NfHl7y6vuvP72Nj0SFP7KrBsw3pb/XlqhC673/n0C2/X5BWtDgHIvPxL/MKLXEWDlGDzVgg+Fy3Y1OFHAhbk1Te2W/Ho/OZyV3OcekVbUOEE1Ap0e5pDlJone7+zGAlsI1Gx8HZgOeIHypmruZF44XroGXCPCF0foUkzztEluXXMuBwfXJxTcWBT7IUe8X27dl1uupb7PBLILPAxQM12hC4Vv1Q3NPewohs15lyowTkMm+VwgM6mPdsXdVYnJd5+xKZH6YCdsN9w5mvXdj3lJ/aZrraLM5ascxalYihWH2aGzbKhNYa/jPqR/Buszv+8Td2AlyVcD+QdD8tnfFzHLcudSFJlWNFfR0eWeG8Wsv7AQFB/Bx6U2zOQTRojJfpMqqGyWvAA/ugvhhBgXicNtiEoOy/aXFUuTjCykMv3Plu5hAsVc8pOuL3OLkeV9e81vwe14LmWJvwRYq7Pre915EJSmysnPIWDehHNTEGWZkVGSjffkrdJh3aof+4d2EbZXt6k44n8xhyla8hP0o+m0QABKcKuOOBQviT1ktYgA/NFV3EYOeV7nSkereIHv8jKgOt3YzK16XJ7dQhzjAtkx6L4t2WCoLMzI4vuGyk7NPNeSwDVfUtUD7cfa3wI3OjXu8A6qpZfCbAm6yXV4j89O3anI0ZF2PTU1FD0jxxFXi4nzzraon72ZIu03OR0rDFdypE3RxTXn5g6ZiKxXUCmhMRa8xWf+KE7b0WMm9gfdLRHGV1gMAAAA+rFrmAzDJpdncPQZoKLTup+6B2/hUIfmktJd8jVgG0l5vu0/DI0JM/g+oemxfc3/s7/YnnF9U/heG/x1al02l8HybrD7zKP7WopiKYh4U4IBLwykHvEaD9EJc9Td0aJlDir49SJNfTmwWzOyZegmYHKx2Q7UTR6IAFqQFZkN9CVcHiaXyGEl6YSwJJ8uF5sizk9LnG5earZDrAW4rzvJzijeIX//4F21XwoHt0lTxKokHWJYeqWtFFjjJMNRX8dS0EjG0Zu6CU421id/c6+n+ehyODzJ36Lmqk14ElKFzEuaIGiheLCbVvng8fTbOD25kWKJtIMXn/xMUyzvRJi/oJiT3o09PBenjUdWYvBu/+fHPB+VyYPRJYN6yjF1d9eQBW9Hrhh/erH9roidTpqXQER2AyTFu8wpRR2NE1qVrsFjb1iMcqxbxPnqQ/ZUe5+UTJVOaha+fFXBYdIyWfLvV8qa4Vwqehu1+dlv/kOUf7hckJR7v5BvfEY5+Grm/B1pcoNglz36cm8vW2/cVy9DlfQt8ASsW+opuVcff7yfZh6jc+piOLwvUF8ACjLl+Q/ZNbkneRK8GpFL3cqGXQAn/6Yc1fY6rnBylGim4lBp+No5/U8v+vSCQHJFOjY/3OfpGxn95icCW/Vjy2b3qdKKBi3kWg/PJps/tHBAUrX5qOaua7K5KJeBI0cI1+NHRr7AgNMfsr/zEiYdHQ8leVfAJuzjZZWmcJe3tSZR9zpTjVQ45wOKEMP0k7DRgAGkzCW2TnV1ZEZo9hYYMyy8Z8Mxva5XHg7fQN1s5gv9XlSCnpBXjkRwYWYonDPPfYc/YKeW7D3Rc1eJWCJkJKIxyPSTTR/a1xpSGOR5lbdyy8adqGmmh+frJywWuh8ReeZZ0R0v6Rqe1d52D1PUamgjJMA15GCRRRjSJqIVf8dG6dCI/hg+F4zqY4uGs+73AXd6gKjyjw7cjWQeBWhbwp0vE97FLSVjL25lj2fPbhp9Rua6kJjmD7S7UsuvuZxHdh3rb0lQnU6Sq3tnJu/Cu+mx/Y+HwOSIiLyMCbDKDH+Wv/UfImzi12kkYXFvk77CodivMjvO/6LwsITOnQIHvboWnz05pa8Sohvt5L5Y43LcQb8DCxngm6UwCeCW++YButLxm5PPOZ0E1DRpR2+NRVxQ/ZRH7JhbxnygHAa2/HJ5cseeqCkdZvdq8WbVqD6Np88egMBJbaTyB9/aNHgBnfA/OJALDL+wCrdunvjtfCc5d6qbb6nniaT4Xr6i0SjA/AhGc53D8zEJYyTdKutM+CNgxz4y4OXbKV1Xs4WUxKAKZp7FF8EV5kVcpL912SivAzTIsHOOHgxCyr3u0baYYBbGPV54xQm7bfR4IzI/kK3aspEpDdOfGMmMSNIcn6sTMxMtZQM1bHDz5kYH4B/bmpV6lE00vafNgYmxFzTGdiA+96XHU5V4r5LDKeUjTOolFsB8V6mbBy0Oz+JW4/aMhr9PBx56ilGlAAttEIa8xe+SGORvJLwBWSQ0xRmG+jsr3HHTTP18GCu0u3G27oolJoVAUfOKndvcmwDt6IO7pdoyKdFgwdxzcLNLWzpoRXKbke3YHe4xn/SCj+EvVWMoXTnu25B43R8n4lBAfzuC4SJ6DrcCBPVtjb+oQ4RHWW4wzupoOtnUhfr+kqoLVx9zRY4QljFuLlb7jRxth/R1zu8uD9BZ9gFEG0dhE9mf7jgciAaivQK8WhC+eYEAEKkREGqbNDvwJmof2iVViCNuQjI3o/ULRe93B/sNmnSpfy+1ou9aWgMsjNh3hij+kH1ZsUu7iCG1cPi8mT/y2jYrN7r9DNfgbd1/pPmyb3O2xq+IWAIzNbafhYr/EglCPiSIJwUL3eQi5x377lEQgosPtCsNc0+fzf09IeTBA3XaNdBAwbhVBsJoPFyoRg9utvOUfzt9XhGCfM6sesJkkFtXOuAjIMMxVUG4wouHQd0JtSbrU2bHBLOSCJoh+xRrCFbLKD9jT8kRLbhteYcIXl8IkHzLYgjVlTr4HbP4jShOo5D5DvYS9N9i2X3jWKo3XaGcJciWGPVBOv40X2BtopnfC5rs+HoGhfTX3cdKRPhyZltFTcwyDgvVKE2ST/zySdXrh4y7hMS/E3jX8P9yevJnUY6yOdG051LTBuxBRbjS0VLCntiJeitXAQ8vbqIoNCdv+AVRtCR6FfdPPRvLtNjEAaN2r/t21QPnmAuDlsCm7HLGsF0TkdwBAdjOpvtKTjbPqRDCoRNcNAn3Ls0pXBl4D432ehxcnlTo0WtIOE/0fluBKzzSZXmUpPj34O9MUOFPe9y+YLLkssxITobWBuHTB3v70BDUxUWs2/EAxu8snqR7TJLd1CZKzQuX2pcuhDMRBWHhtkzC+gBPhbJsIAvxiKOXFGJSnfPJVk6vZ08XwB0WpYj2BwE97TiAnhlVOW04HW0AFM08Z61COhzbRa2TGOhD9yombjk6EaehBITvFSrmzz67V9YT5X4HVsQRDPeFBseIBg+SruZBITEmnpb7EHDOcIU2iyjMsPTHgbg9h5EBLdPaC6PWSaAzxu3n4YOLO7D2c7Egzi19sP0jsVyF4htz837GZrwYmuN0ezjmhReYe5S2eCDwt4eqmi6MmUG+c7OdSSlT7KrSnJLlrt3TAxpeCoUAMHF3JdIvLNoNu/289BhRmQh8KSdEP4oB159bkYTFTU7x3rWAI3Y4P1JxTZJh8AjEJmj+iSu1M0itD3k/0R8nPnpvF4PJAdZD4ogowUsak/x53dlNMTD74bPOUIPLWt4wHwGsHc7K9gFQ1Oc5ewCBvIS2xd220Fx16XaG33dN3cPhMrriRpX95ARYivZHlpsDkPdjB0cA/AW6/wryE5Zj274ysRQ13xLY0Rqb/YfKcwpzf211krgfiFBw8SaRKRHzfIMyAiNVVKvFhBDvdWSdqTaOXHtSdMH9eGfVpqpU/k2Zfy+Rmb7QpIKp/s/ytzdrMsNtcxbcReuRPNMouhvBncpYyC6bmUrS8WhhgnRgOIfWX9vz+2BvAHwjv/TXY2mZsvDI3Dt28tnfi/EQDoGaxkGLGzoXxACmRxhG+L+s7NIIHJTsm5P5E9ZjVTn0wU3o9Vb5SJpO1a25RpP/7SdHMUienkB4uF7ruL5RiGBCNJJT/bKsoPDiWBvvGAo2kIoM+3vmBG9EsLBhifz7QRw3neHLh4EK6CoN4GKKzZr+hGCnbORYuQFpfDYKbJ8V1hDQ6guz//r0F3AvgOls4gqC+IOGW3fnOLK/281WsTvA7njdbpbDyAvyI2sHdbG+TM6dvHEfyV8xP2N0nMXmW8c2e46vO/UbcAdhLUIoyz08Io2fGxeEDGTkblIce95S39Zz5eFX0Q2Vt7fJb7xXfcXm2es2K+YH1YhBtvkK/rEuT2sKosTFkMK5lHLT7AHeHmuwoS+19zqCWdCl1mPByHaGMH4yRwxwGmCJx+MJ+yZtls3q0UYZRSKwM4c7YhFVQgkvZqDphsnaT0QXemrNB2oV4ZAZdk5wyp5Ua7X28IAeF9Pgc1QosfsEbQ2EZKqW3v+akGhzmUHxH+2pWs4gT+BwkOMpDqD2qxWhmRRvQxLIid6ZIrfmHgvNZe0RjwVxnQNsiGHaH+uMvzu4t5S+lbViEmliATGabppAk/nKUEP/V7TWDA5/9RQB9Uj8/579tQfHWf88LTYl++vbo/DIupu340lBsXuGa6MFy6D1BwUlQQEvGrRdbuvmcWlPu/HVZtuDvy8w0T0Ugaa4UcAAA=="
+                alt="FSSAI"
+              />
+              <img class="l" src="assets/Logo.svg" alt="AuraNuts" />
+              <p>
+                Goodness of dry fruits, the sweetness of honey, and thoughtful
+                gifting for everyday moments and special occasions.
+              </p>
+            </div>
+            <div>
+              <h4>Contact</h4>
+              <ul>
+                <li><a href="tel:+919535806948">+91 9535806948</a></li>
+                <li><a href="tel:+918660634853">+91 8660634853</a></li>
+                <li>
+                  <a href="mailto:auranutsofficial@gmail.com"
+                    >auranutsofficial@gmail.com</a
                   >
-                    <rect x="3" y="3" width="18" height="18" rx="5" />
-                    <circle cx="12" cy="12" r="4" />
-                    <circle cx="17.5" cy="6.5" r=".6" /></svg
-                  >Instagram</a
-                >
-              </li>
-              <li>
-                <a href="#"
-                  ><svg viewBox="0 0 24 24" fill="currentColor">
-                    <circle cx="12" cy="12" r="10" />
-                    <path
-                      d="M13 21v-7h2.5l.5-3h-3V9.5c0-.9.4-1.5 1.6-1.5H16V5.4c-.3 0-1.2-.2-2.2-.2-2.300 0-3.800 1.400-3.800 3.900V11H7.500v3H10v7z"
-                      fill="#000"
-                    /></svg
-                  >Facebook</a
-                >
-              </li>
-              <li>
-                <a href="#"
-                  ><svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
+                </li>
+                <li>Bangalore, Karnataka</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Quick links</h4>
+              <ul>
+                <li><a href="/product.html">Shop</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#collection">Collection</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4>Social</h4>
+              <ul>
+                <li>
+                  <a
+                    href="https://www.instagram.com/auranuts_official?utm_source=qr&stkn=MTgyNm5sejNsa28zNg=="
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <rect x="3" y="3" width="18" height="18" rx="5" />
+                      <circle cx="12" cy="12" r="4" />
+                      <circle cx="17.5" cy="6.5" r=".6" /></svg
+                    >Instagram</a
                   >
-                    <path d="M4 4l16 16M20 4L4 20" /></svg
-                  >Twitter</a
-                >
-              </li>
-            </ul>
+                </li>
+                <li>
+                  <a href="#"
+                    ><svg viewBox="0 0 24 24" fill="currentColor">
+                      <circle cx="12" cy="12" r="10" />
+                      <path
+                        d="M13 21v-7h2.5l.5-3h-3V9.5c0-.9.4-1.5 1.6-1.5H16V5.4c-.3 0-1.2-.2-2.2-.2-2.300 0-3.800 1.400-3.800 3.900V11H7.500v3H10v7z"
+                        fill="#000"
+                      /></svg
+                    >Facebook</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M4 4l16 16M20 4L4 20" /></svg
+                    >Twitter</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="cr">
+            <span>© 2026 Auranuts. All rights reserved.</span
+            ><span><a href="#">Privacy</a><a href="#">Terms</a></span>
           </div>
         </div>
-        <div class="cr">
-          <span>© 2026 Auranuts. All rights reserved.</span
-          ><span><a href="#">Privacy</a><a href="#">Terms</a></span>
-        </div>
-      </div>
-    </footer>
+      </footer>
     </div>
     <script>
       const WA = "919535806948",
@@ -1102,9 +1198,12 @@
       const PRODUCT_IMAGES = [
         [
           "assets/jar%20pack/PK1.png",
+          "assets/jar%20pack/PK1_1.png",
+          "assets/jar%20pack/PK1_2.png",
           "assets/jar%20pack/PK2.png",
           "assets/jar%20pack/PK3.png",
-          "assets/jar%20pack/PK4.png",
+          "assets/jar%20pack/PK4.jpg",
+          "assets/jar%20pack/PK5.png",
         ],
         [
           "assets/dryfruits%20pack/DF2.jpg",
@@ -1124,22 +1223,41 @@
           "assets/special_pack/PK1.jpg",
           "assets/special_pack/PK2.png",
           "assets/special_pack/PK3.jpg",
+          "assets/special_pack/PK4.png",
         ],
       ];
       const S = [
         [
           [
             "Pocket friendly",
-            "20g single serve",
-            "Everyday Taster pack",
-            "Honey-roasted mixed dry fruits",
+            "20gm",
+            "Honey Mix Taster pack",
+            "Honey mixed dry fruits",
             20,
             29,
             "Order now",
           ],
           [
+            "Pocket friendly",
+            "30gm",
+            "Honey Mix Taster pack",
+            "Honey mixed dry fruits",
+            30,
+            49,
+            "Order now",
+          ],
+          [
+            "Pocket friendly",
+            "50gm",
+            "Honey Mix Taster pack",
+            "Honey mixed dry fruits",
+            50,
+            79,
+            "Order now",
+          ],
+          [
             "Bestseller",
-            "250g glass jar",
+            "250gm",
             "Classic Pantry Jar",
             "Signature premium dry-fruit mix",
             249,
@@ -1148,8 +1266,8 @@
           ],
           [
             "Best value",
-            "500g glass jar",
-            "Grand Pantry Box",
+            "500gm",
+            "Honey mix Pack",
             "A generous everyday assortment",
             399,
             499,
@@ -1157,19 +1275,20 @@
           ],
           [
             "For sharing",
-            "1kg keepsake box",
-            "Family Taster Pack",
+            "100gm",
+            "Medium Honey Mix Pack",
             "Six hand-sorted favorites in one box",
             899,
             1049,
             "Order now",
           ],
-        ],
-        [
           
+        ],
+
+        [
           [
             "Protein rich",
-            "200g signature pack",
+            "200gm signature pack",
             "California Almonds",
             "Crisp, lightly roasted whole almonds",
             0,
@@ -1178,7 +1297,7 @@
           ],
           [
             "Hand selected",
-            "200g signature pack",
+            "200gm signature pack",
             "Cashews",
             "Creamy whole W320 cashews",
             0,
@@ -1187,7 +1306,7 @@
           ],
           [
             "Small batch",
-            "200g signature pack",
+            "200gm signature pack",
             "Pistachios",
             "Salted in-shell Iranian pistachios",
             0,
@@ -1196,7 +1315,7 @@
           ],
           [
             "Naturally sweet",
-            "200g signature pack",
+            "200gm signature pack",
             "Dried Apricots",
             "Soft, golden dried apricots",
             0,
@@ -1205,7 +1324,7 @@
           ],
           [
             "Everyday favorite",
-            "200g signature pack",
+            "200gm signature pack",
             "Walnut Kernels",
             "Whole walnut kernels",
             0,
@@ -1214,7 +1333,7 @@
           ],
           [
             "Naturally sweet",
-            "200g signature pack",
+            "200gm signature pack",
             "Black Raisins",
             "Naturally sweet black raisins",
             0,
@@ -1223,7 +1342,7 @@
           ],
           [
             "Golden selection",
-            "200g signature pack",
+            "200gm signature pack",
             "Golden Raisins",
             "Sweet golden raisins",
             0,
@@ -1232,7 +1351,7 @@
           ],
           [
             "Traditional favorite",
-            "200g signature pack",
+            "200gm signature pack",
             "Amla Candy",
             "Tangy, chewy dried amla pieces",
             0,
@@ -1241,7 +1360,7 @@
           ],
           [
             "Naturally sweet",
-            "200g signature pack",
+            "200gm signature pack",
             "Dates",
             "Soft, naturally sweet dates",
             0,
@@ -1250,7 +1369,7 @@
           ],
           [
             "Nutrient rich",
-            "200g signature pack",
+            "200gm signature pack",
             "Pumpkin Seeds",
             "Shelled pumpkin seeds",
             0,
@@ -1259,7 +1378,7 @@
           ],
           [
             "Nutrient rich",
-            "200g signature pack",
+            "200gm signature pack",
             "Sunflower Seeds",
             "Shelled sunflower seeds",
             0,
@@ -1268,7 +1387,7 @@
           ],
           [
             "Fresh",
-            "200g signature pack",
+            "200gm signature pack",
             "Dried Figs",
             "Soft, naturally sweet mountain figs",
             0,
@@ -1279,43 +1398,58 @@
         [
           [
             "Ready to gift",
-            "200g · 2 selections",
-            "Festive Duo",
-            "Two jars, festive sleeve and message card",
-            1199,
+            "100gm",
+            "Festive Cone",
+            "Mixed Dryfruits Without Honey ",
+            100,
             0,
-            "Choose this gift",
+            "Order Now",
           ],
           [
             "Personalizable",
-            "160g · minimum 25",
+            "160gm",
             "Wedding Favor",
             "Personalized mini box with two varieties",
-            299,
+            0,
             0,
             "Customize gift",
           ],
           [
             "Bulk favorite",
-            "900g · 4 selections",
-            "Corporate Signature",
-            "Four selections with custom-branded sleeve",
-            1699,
+            "300gm",
+            "Bottle Signature",
+            "Without Honey & Reusable Ring Water Bottle",
+            349,
             0,
-            "Request quote",
+            "Order now",
           ],
           [
             "Grand gesture",
-            "1.4kg · 6 selections",
-            "Celebration Trunk",
-            "Six varieties in a reusable keepsake case",
-            2499,
+            "100gm",
+            "Dryfruit Chocolate Box",
+            "Homemade Nuts Chocolate",
+            120,
             0,
-            "Choose this gift",
+            "Order now",
           ],
         ],
       ];
       const inr = (n) => "₹" + n.toLocaleString("en-IN");
+      // Enter a starting price for each product below, in rupees.
+      const startingPrices = {
+        "California Almonds": 220,
+        Cashews: 210,
+        Pistachios: 349,
+        "Dried Apricots": 170,
+        "Walnut Kernels": 300,
+        "Black Raisins": 330,
+        "Golden Raisins": 300,
+        "Amla Candy": 149,
+        Dates: 299,
+        "Pumpkin Seeds": 399,
+        "Sunflower Seeds": 199,
+        "Dried Figs": 449,
+      };
       S.forEach((list, i) => {
         document.getElementById("g" + (i + 1)).innerHTML = list
           .map((p, productIndex) => {
@@ -1325,7 +1459,12 @@
               : `Hey there, I want to order ${p[2]} (${p[1]}).`;
             const image =
               PRODUCT_IMAGES[i][productIndex % PRODUCT_IMAGES[i].length];
-            const price = askForPrice ? "Ask for price" : inr(p[4]);
+            const startingPrice = startingPrices[p[2]];
+            const price = askForPrice
+              ? startingPrice
+                ? `${inr(startingPrice)} onwards`
+                : "Ask for price"
+              : inr(p[4]);
             return `<article class="pd rv" tabindex="0" role="link" aria-label="Order ${p[2]}, ${p[1]}, on WhatsApp" data-wa-url="${link(msg)}"><div class="im"><img src="${image}" alt="${p[2]}" loading="lazy" decoding="async"><span class="bd">${p[0]}</span><span class="mt">${p[1]}</span></div><h3>${p[2]}</h3><p class="ds">${p[3]}</p><div class="pr"><b class="${askForPrice ? "ask-price" : ""}">${price}${p[5] ? `<s>${inr(p[5])}</s>` : ""}</b><a class="ab" target="_blank" rel="noopener" href="${link(msg)}">${p[6]} ↗</a></div></article>`;
           })
           .join("");
